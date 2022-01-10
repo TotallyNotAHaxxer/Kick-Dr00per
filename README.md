@@ -47,4 +47,60 @@ go run main.go --url "<url>" | ex go run main.go --url "http://testphp.vulnweb.c
 
 ```
 
-when you are prompted to this then you will need to input the number in which the paramater is on
+when you are prompted to this then you will need to input the number in which the paramater is on ex 1
+
+# output of tables 
+
+i know the output is very very slow but depending on the URL it can out preform certian tools, when i was testing this tool on my own server it seems as if sqlmap wouldnt make a proper connection, however this still did, that was until i used verbose lv6 , random agent, tor, tor-type, u, dbms MySQL etc to speed up the process and actually get it to make requests and retrieve all the data
+
+```
+example output 
+
+
+[22:4:42]  [DATA] TO OWN/RETRIEVE      =>  TBL_whatever
+[22:4:42]  [DOWNLOAD 6] TABLE OWNED  =>  TBL_whatever
++----------------+
+|           Name |
++================+
+|    TBL_whatever |
++----------------+
+
+[22:4:42]  [DATA] TO OWN/RETRIEVE      => TBLname
+[22:4:42]  [DOWNLOAD 7] TABLE OWNED  => TBLname
++----------------+
+|           Name |
++================+
+|    TBLname     |
++----------------+
+
+[22:4:42]  [DATA] TO OWN/RETRIEVE      => TBLadmin
+[22:4:42]  [DOWNLOAD 8] TABLE OWNED  => TBLadmin
++-----------------+
+|            Name |
++=================+
+|    TBLadmin     |
++-----------------+
+
+[22:4:42]  [DATA] TO OWN/RETRIEVE      => TBLname
+[22:4:42]  [DOWNLOAD 9] TABLE OWNED  => TBLwhatever
++--------------+
+|         Name |
++==============+
+|    TB4       |
++--------------+
+
+[22:4:42]  [DATA] TO OWN/RETRIEVE      => TBL4
+[22:4:42]  [DOWNLOAD 10] TABLE OWNED  => TBL1
++-------------+
+|        Name |
++=============+
+|    TBL1     |
++-------------+
+```
+
+# servers supported 
+
+```
+MySQL Newest and oldest tested on both
+```
+ 
